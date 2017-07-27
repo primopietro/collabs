@@ -12,7 +12,7 @@
             <v-card  class="mt-5 mb-5">
               <v-card-text>
                <v-container fluid>
-                 <v-layout row wrap>
+                 <v-layout row wrap> 
                    <v-select
                    :dark="dark"
                    :light="!dark"
@@ -21,7 +21,7 @@
                      v-model="selected"
                      multiple
                      chips
-                     hint="Pick two or more artists"
+                     hint="Pick two or more artists that you are interested in"
                      persistent-hint
                      autocomplete
                      auto
