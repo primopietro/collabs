@@ -3,8 +3,8 @@
     :dark="dark"
     :light="!dark"
      standalone>
-    <v-parallax src="/collabs/images/bg1.jpeg" height="400"></v-parallax>
-    
+    <v-parallax v-if="dark" src="/collabs/images/bg1.jpeg" height="400"></v-parallax>
+      <v-parallax v-if="!dark" src="/collabs/images/bg2.jpeg" height="400"></v-parallax>
     <main style="min-height:45vh;">
       <v-container fluid fill-height>
         <v-layout class="customContent">
