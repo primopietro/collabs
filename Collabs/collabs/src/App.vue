@@ -3,9 +3,11 @@
     :dark="dark"
     :light="!dark"
      standalone>
-    <main style="min-height:95vh;">
+    <v-parallax src="/collabs/images/bg1.jpeg" height="400"></v-parallax>
+    
+    <main style="min-height:45vh;">
       <v-container fluid fill-height>
-        <v-layout>
+        <v-layout class="customContent">
           <v-flex  offset-xs0 xs12 offset-sm1 sm10 offset-md2 md8>
             <v-card  class="mt-5 mb-5">
               <v-card-text>
@@ -72,7 +74,7 @@
         console.log("get saved data");
         console.log(window.localStorage.getItem('themeColor'));
         this.dark =  window.localStorage.getItem('themeColor' ) == 'true';
-        
+
       }
 
       Axios.get(`/collabs/Routing/getArtistList.php?safe_key=420key666`)
@@ -152,5 +154,8 @@
 *::-webkit-scrollbar-thumb
 {
 	background-color: grey;
+}
+.customContent{
+  margin-top:-300px;
 }
 </style>
