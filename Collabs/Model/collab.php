@@ -145,7 +145,7 @@ class Collab {
 	}
 	
 	function getArtistListFromDB() {
-		$sql = "SELECT DISTINCT artistName FROM `collab`.`collab`";
+		$sql = "SELECT DISTINCT artistName FROM `collab`.`collab` ORDER BY artistName";
 		include_once '../database_connect.php';
 		$result = $conn->query ( $sql );
 		$anArtistList = array ();
