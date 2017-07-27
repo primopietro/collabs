@@ -60,7 +60,7 @@
     data () {
       return {
         artistList:[],
-        dark:(window.localStorage.getItem('themeColor' == 'true')),
+        dark:window.localStorage.getItem('themeColor') == 'true',
         selected:[],
         songList:[]
       }
@@ -71,7 +71,8 @@
       if(typeof(Storage) !== "undefined") {
         console.log("get saved data");
         console.log(window.localStorage.getItem('themeColor'));
-        this.dark =  (window.localStorage.getItem('themeColor' == 'true'));
+        this.dark =  window.localStorage.getItem('themeColor' ) == 'true';
+        
       }
 
       Axios.get(`/collabs/Routing/getArtistList.php?safe_key=420key666`)

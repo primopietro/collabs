@@ -59,6 +59,7 @@ class Collab {
 				$aCollabList [$row ["songName"]] = $aCollab;
 			}
 		}
+		
 		return $aCollabList;
 	}
 	function getDBObjectJSONFromSongName($name) {
