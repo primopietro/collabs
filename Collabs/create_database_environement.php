@@ -70,7 +70,16 @@ else{
 echo "<br>";
 
 
-$sql = "INSERT INTO `collab` (`songName`, `artistName`, `isMain`) VALUES ('Giants', 'Childish Gambino', true), ('Giants', 'Josh Osho', false), ('Giants', 'Kauai', false);
+$sql = "INSERT INTO `collab` (`songName`, `artistName`, `isMain`)
+ VALUES ('Giants', 'Childish Gambino', true), 
+('Giants', 'Josh Osho', false),
+('FakeSongTest', 'Childish Gambino', false), 
+('FakeSongTest', 'Josh Osho', true),
+('Giants', 'Kauai', false),
+ ('Last Time', 'Gucci Mane', true),
+ ('Last Time', 'Travis Scott', false),
+ ('Baptized In Fire', 'Kid Kudi', true),
+ ('Baptized In Fire', 'Travis Scott', false);
 ";
 if (!$result = $conn->query($sql)) {
 	// Oh no! The query failed.
