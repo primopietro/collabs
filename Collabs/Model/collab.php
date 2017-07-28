@@ -212,6 +212,22 @@ class Collab {
 	function getJsonDataArtistList() {
 		return json_encode ( $this->getArtistListFromDB () );
 	}
+	//TODO :
+	/*
+	 --TOP ARTISTS 
+	 SELECT      `artistName`
+    FROM    collab
+    GROUP BY `artistName`
+    ORDER BY COUNT(*) DESC
+    LIMIT    10;
+	  --TOP SONGS 
+	 SELECT      `songName`
+    FROM    collab
+    GROUP BY `songName`
+    ORDER BY COUNT(*) DESC
+    LIMIT    10;
+	 */
+	
 	/**
 	 * songName
 	 *
