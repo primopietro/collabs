@@ -77,7 +77,7 @@
 
       }
 
-      Axios.get(`/Routing/getArtistList.php?safe_key=420key666`)
+      Axios.get(`/project/Routing/getArtistList.php?safe_key=420key666`)
       .then(response => {
         // JSON responses are automatically parsed.
         this.artistList = response.data
@@ -101,7 +101,7 @@
       },
       updateList(){
         //console.log(this.selected);
-        Axios.post(`/Routing/getSongList.php?safe_key=420key666`,this.selected)
+        Axios.post(`/project/Routing/getSongList.php?safe_key=420key666`,this.selected)
         .then(response => {
 
           // JSON responses are automatically parsed.
