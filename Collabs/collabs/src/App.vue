@@ -49,7 +49,7 @@
     </main>
     <v-footer >
       <v-switch @click.native="saveCookieTheme" primary label="Change theme"  v-model="dark" class="paddingTop"></v-switch>
-      <div style="padding-right:5px;">© Pietro Primo and Phillipe Pitz</div>
+      <div style="padding-right:5px;">© Pietro Primo and Phillippe Pitz</div>
     </v-footer>
 
 
