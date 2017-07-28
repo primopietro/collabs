@@ -48,7 +48,6 @@
       </v-container>
     </main>
     <v-footer >
-
       <v-switch @click.native="saveCookieTheme" primary label="Change theme"  v-model="dark" class="paddingTop"></v-switch>
 
     </v-footer>
@@ -56,6 +55,7 @@
 
   </v-app>
 </template>
+
 
 <script>
   export default {

@@ -33,6 +33,7 @@ class Collab {
 		if ($this->isMain != true) {
 			$boolean = 2;
 		}
+		//???????????
 		
 		$sql = "INSERT INTO `collab` (`songName`, `artistName`, `isMain`)
 		VALUES ('$this->songName', '	$this->artistName', '$boolean')";
@@ -142,6 +143,58 @@ class Collab {
 	
 	function getDBObjectJSONFromArtistNames($artists) {
 		echo json_encode ( $this->getDBObjectListFromArtistNames ( $artists ) );
+	}
+	
+	function insertCollab($collabSong, $mainArtist){
+		$servername = "localhost";
+		$username = "root";
+		$password = "";
+		$dbname = "collab";
+		
+		// Create connection
+		$conn = new mysqli($servername, $username, $password, $dbname);
+	
+		$songName =   $collabSong["songName"];
+		echo $songName . " " . $mainArtist . "<br>";
+		$sql = "INSERT INTO `collab` (`songName`, `artistName`, `isMain`)
+		VALUES ('".$songName."', ' ". $mainArtist. "', 1)";
+		
+		if (! $result = $conn->query ( $sql )) {
+			//echo "fail";
+			//exit ();
+		} else {
+			//echo "success";
+		}
+		
+		$artistList =    $collabSong["artistList"];
+		if (is_array($artistList) || is_object($artistList))
+		{
+			foreach ($artistList as $localArtist)
+			{
+				$sql = "INSERT INTO `collab` (`songName`, `artistName`, `isMain`)
+				VALUES ('" . $songName. "', '" . $localArtist. "', 0)";
+					
+				if (! $result = $conn->query ( $sql )) {
+					//echo "fail";
+					//exit ();
+				} else {
+					//echo "success";
+				}
+			}
+		}
+		else{
+			$sql = "INSERT INTO `collab` (`songName`, `artistName`, `isMain`)
+				VALUES ('" . $songName. "', '" . $artistList. "', 0)";
+			
+			if (! $result = $conn->query ( $sql )) {
+				//echo "fail";
+				//exit ();
+			} else {
+				//echo "success";
+			}
+		}
+		
+		
 	}
 	
 	function getArtistListFromDB() {
