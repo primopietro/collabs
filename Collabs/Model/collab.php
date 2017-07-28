@@ -120,7 +120,7 @@ class Collab {
 	}
 	function getSecondaryArtistListFromSongName($songName) {
 		include_once '../database_connect.php';
-		$sql = "SELECT artistName
+		$sql = "SELECT DISTINCT artistName
 		FROM collab
 		WHERE songName = '$songName' AND isMain = 0 ";
 		

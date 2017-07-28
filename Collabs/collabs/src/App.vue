@@ -3,8 +3,8 @@
     :dark="dark"
     :light="!dark"
      standalone>
-    <v-parallax v-if="dark" src="/collabs/images/bg1.jpeg" height="400"></v-parallax>
-      <v-parallax v-if="!dark" src="/collabs/images/bg2.jpeg" height="400"></v-parallax>
+    <v-parallax v-if="dark" src="/project/images/bg1.jpeg" height="400"></v-parallax>
+      <v-parallax v-if="!dark" src="/project/images/bg2.jpeg" height="400"></v-parallax>
     <main style="min-height:45vh;">
       <v-container fluid fill-height>
         <v-layout class="customContent">
@@ -21,7 +21,7 @@
                      v-model="selected"
                      multiple
                      chips
-                     hint="Pick two or more artists that you are interested in"
+                     hint="Pick one or more artists that you are interested in"
                      persistent-hint
                      autocomplete
                      auto
@@ -77,7 +77,7 @@
 
       }
 
-      Axios.get(`/collabs/Routing/getArtistList.php?safe_key=420key666`)
+      Axios.get(`/project/Routing/getArtistList.php?safe_key=420key666`)
       .then(response => {
         // JSON responses are automatically parsed.
         this.artistList = response.data
@@ -101,7 +101,7 @@
       },
       updateList(){
         //console.log(this.selected);
-        Axios.post(`/collabs/Routing/getSongList.php?safe_key=420key666`,this.selected)
+        Axios.post(`/project/Routing/getSongList.php?safe_key=420key666`,this.selected)
         .then(response => {
 
           // JSON responses are automatically parsed.

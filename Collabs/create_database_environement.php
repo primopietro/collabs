@@ -73,8 +73,6 @@ echo "<br>";
 $sql = "INSERT INTO `collab` (`songName`, `artistName`, `isMain`)
  VALUES ('Giants', 'Childish Gambino', true), 
 ('Giants', 'Josh Osho', false),
-('FakeSongTest', 'Childish Gambino', false), 
-('FakeSongTest', 'Josh Osho', true),
 ('Giants', 'Kauai', false),
  ('Last Time', 'Gucci Mane', true),
  ('Last Time', 'Travis Scott', false),

@@ -7,7 +7,7 @@ if(isset( $_GET['safe_key'])){
 		$aCollab = new Collab();
 		
 		$artistList = json_decode(file_get_contents('php://input'), TRUE);
-		if(sizeof($artistList)>1){
+		if(sizeof($artistList)>0){
 			echo $aCollab->getDBObjectJSONFromArtistNames($artistList);
 		}
 	
